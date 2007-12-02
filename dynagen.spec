@@ -5,11 +5,13 @@ Version:	0.10.1
 Release:	0.1
 License:	GPL v2
 Group:		Networking/Utilities
-Source0:	http://dl.sourceforge.net/%name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/dynagen/%{name}-%{version}.tar.gz
 # Source0-md5:	4ca26e4b4b8bee61a77f92eace8404d0
 Patch0:		%{name}-debian.patch
 URL:		http://dynagen.org/
 BuildRequires:	python-modules
+BuildRequires:	python-devel
+BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
