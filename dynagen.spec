@@ -3,15 +3,16 @@ Summary(pl.UTF-8):	Kontroler emulatora routera Cisco
 Name:		dynagen
 Version:	0.10.1
 Release:	0.1
-License:	GPL v2
+License:	GPL v2+
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/dyna-gen/%{name}-%{version}.tar.gz
 # Source0-md5:	4ca26e4b4b8bee61a77f92eace8404d0
 Patch0:		%{name}-debian.patch
 URL:		http://dynagen.org/
-BuildRequires:	python-devel
-BuildRequires:	python-modules
+BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	python-modules >= 1:2.5
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	sed >= 4.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -68,8 +69,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README* COPYING docs sample_labs
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*
-%attr(755,root,root) %{_bindir}/*
+%doc README.txt docs sample_labs
+%dir %{_sysconfdir}/dynagen
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dynagen/dynagen.ini
+%attr(755,root,root) %{_bindir}/dynagen
 %{py_sitescriptdir}/*.py[co]
-%{_mandir}/man1/*.1*
+%{py_sitescriptdir}/dynagen-*.egg-info
+%{_mandir}/man1/dynagen.1*
