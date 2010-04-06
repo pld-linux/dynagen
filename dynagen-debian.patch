@@ -314,7 +314,7 @@ diff -urNad dynagen-0.8.3~/setup.py dynagen-0.8.3/setup.py
 +    url = "http://sourceforge.net/projects/dyna-gen",
 +
 +    scripts = [ 'dynagen' ],
-+    data_files = [ ('/etc/dynagen', ['dynagen.ini']), ('/usr/share/man/man1', ['debian/dynagen.1']) ],
-+    py_modules = [ 'configobj', 'console', 'dynamips_lib', 'validate' ]
++    data_files = [ ('/etc/', ['dynagen.ini']), ('/usr/share/man/man1', ['debian/dynagen.1']) ],
++    py_modules = [ 'confConsole', 'console', 'dynamips_lib', 'pemu_lib' ]
 +)
 +
