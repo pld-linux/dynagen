@@ -2,7 +2,7 @@ Summary:	Cisco router emulator controller
 Summary(pl.UTF-8):	Kontroler emulatora routera Cisco
 Name:		dynagen
 Version:	0.11.0
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/dyna-gen/%{name}-%{version}.tar.gz
@@ -71,11 +71,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.txt docs sample_labs
-#%dir %{_sysconfdir}/dynagen
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dynagen.ini
+%dir %{_sysconfdir}/dynagen
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dynagen/dynagen.ini
+%dir %{_datadir}/dynagen
+%{_datadir}/dynagen/configspec
 %attr(755,root,root) %{_bindir}/dynagen
 %{py_sitescriptdir}/*.py[co]
-#%exclude %{py_sitescriptdir}/configobj.py[co]
-#%exclude %{py_sitescriptdir}/validate.py[co]
 %{py_sitescriptdir}/dynagen-*.egg-info
 %{_mandir}/man1/dynagen.1*

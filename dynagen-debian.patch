@@ -314,7 +314,19 @@ diff -urNad dynagen-0.8.3~/setup.py dynagen-0.8.3/setup.py
 +    url = "http://sourceforge.net/projects/dyna-gen",
 +
 +    scripts = [ 'dynagen' ],
-+    data_files = [ ('/etc/', ['dynagen.ini']), ('/usr/share/man/man1', ['debian/dynagen.1']) ],
++    data_files = [ ('/etc/dynagen', ['dynagen.ini']), ('/usr/share/man/man1', ['debian/dynagen.1']), 
++	('/usr/share/dynagen/', ['configspec']) ],
 +    py_modules = [ 'confConsole', 'console', 'dynamips_lib', 'pemu_lib' ]
 +)
 +
+--- dynagen-0.11.0/dynagen_orig	2010-04-07 18:19:38.000000000 +0200
++++ dynagen-0.11.0/dynagen	2010-04-07 18:20:05.000000000 +0200
+@@ -43,7 +43,7 @@
+ VERSION = '0.11.0'
+ CONFIGSPECPATH = ['/usr/share/dynagen', '/usr/local/share']
+ CONFIGSPEC = 'configspec'
+-INIPATH = ['/etc', '/usr/local/etc']
++INIPATH = ['/etc', '/usr/local/etc', '/etc/dynagen']
+ INIFILE = 'dynagen.ini'
+ MODELTUPLE = (  # A tuple of known model objects
+     C1700,
