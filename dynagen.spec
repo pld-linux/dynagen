@@ -2,7 +2,7 @@ Summary:	Cisco router emulator controller
 Summary(pl.UTF-8):	Kontroler emulatora routera Cisco
 Name:		dynagen
 Version:	0.11.0
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/dyna-gen/%{name}-%{version}.tar.gz
