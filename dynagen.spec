@@ -59,7 +59,7 @@ sieciami wirtualnymi:
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__python} setup.py install \
+%py_install \
 	--root $RPM_BUILD_ROOT
 
 %py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
